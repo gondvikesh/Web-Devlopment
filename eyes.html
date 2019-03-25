@@ -1,0 +1,38 @@
+<html>
+    <head>
+    <title>eyes follow mouse</title>
+    <link rel="icon" href="br.png">
+    <link rel="stylesheet" href="eyes.css" >
+    </head>
+    <body>
+        
+        <div class="eyes">
+            
+            <div class="eye">
+                <div class="balls">
+                </div>
+            </div>
+            
+            
+            <div class="eye">
+                    <div class="balls">
+                        
+                    </div>
+                </div>
+        </div>
+    
+    </body>
+    <script>
+    var ball=document.getElementsByClassName("balls");
+    document.onmousemove = function(){
+        var x=event.clientX*100/window.innerWidth + "%";
+        var y=event.clientY*100/window.innerHeight + "%";
+       for(var i=0;i<2;i++)
+       {
+           ball[i].style.left=x;
+           ball[i].style.top=y;
+           ball[i].style.transform="translate(-"+x+",-"+y+")";
+       } 
+    }
+    </script>
+</html>
