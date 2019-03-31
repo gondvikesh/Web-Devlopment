@@ -1,0 +1,28 @@
+*{
+    padding:10px;
+    margin:12px;
+    background-color:whitesmoke;
+}
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#header,#heading{
+    background-color: green;
+    text-align:center;
+    padding:15px;
+    color:white;
+}
+div{
+    border:1px solid black;
+}
+ul{
+    list-style: none;
+}
+ul li,.list-item{
+    border:0.5px solid black;
+    margin:0px;
+}
+.button{
+    display:inline-block;
+    align-content :center;
+}

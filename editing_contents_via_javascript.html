@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>contents via javascript</title>
+        <link rel="icon" href="../br.png">
+        <link rel="stylesheet" href="editing_contents_via_javascript.css">
+
+    </head>
+    <body id="main">
+        <h1 id="header" onmouseout="fun()">Dom Editing</h1>
+        <h2 id="heading">
+            Item Lister
+        </h2>
+        <div id="pro" >
+            <h3 id="items">Add items</h3>
+            <form>
+                <input type="text" value="enter items">
+                <input type="button" value="submit"><br><br>
+            </form>
+            <h2 id="ite">Items</h2>
+            <ul id="lst" class="list">
+                <li class="list-item">item 1</li>
+                <li class="list-item">item 2</li>
+                <li class="list-item">item 3</li>
+                <li class="list-item">item 4</li>
+            </ul>
+            <button id="add">Add items</button>
+            <button id="remove">Remove items</button>
+            <br>
+            <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quidem optio aliquid veniam qui facere sequi nihil sunt porro culpa, quaerat dolore similique iste aspernatur, officiis facilis ratione, dolorum perspiciatis?</p>
+        </div>
+       
+    </body>
+    <script>
+        function fun(){
+    var head=document.getElementById("heading");
+    head.textContent="hey this is change..."}
+    var lists = document.getElementsByClassName("list-item");
+        for (var i = 0; i < lists.length; i++) {
+            lists[i].style.backgroundColor = "lightgray";
+        }
+   // var inpt=document.querySelector('input[type="submit"]');
+    // //inpt.value="send"//.style.backgroundColor="black";
+    // var itemlist=document.querySelector(".list")
+    // itemlist.parentNode.style.backgroundColor="yellow";
+    // itemlist.previousElementSibling.style.backgroundColor="red";
+    // itemlist.nextElementSibling.style.backgroundColor="green";
+    var add=document.getElementById("add").addEventListener("click",function(){
+    var mydiv=document.createElement('li');
+    //li.className="list-item";
+    var text=document.createTextNode("new item");//("Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quidem optio aliquid veniam qui facere sequi nihil sunt porro culpa, quaerat dolore similique iste aspernatur, officiis facilis ratione, dolorum perspiciatis?")
+    mydiv.appendChild(text);
+    document.getElementById("lst").appendChild(mydiv);
+    });
+    // var ins=document.querySelector('p  para');
+    // var h1=document.querySelector('p');
+    // ins.insertBefore(mydiv,h1);
+    // var b=document.getElementById("main").addEventListener("mousemove",function(){
+    //     document.style.backgroundColor=
+    // });
+
+    var remove=document.getElementById("remove");
+    remove.addEventListener("click",function ()
+    {
+    var lit=document.getElementById("lst");
+    lit.removeChild(lit.childNodes[0]);
+    });
+    var body=document.getElementById("main").addEventListener("mousemove",function(e){
+        document.body.style.backgroundColor="rgb("+e.offsetX +","+e.offsetY+ ",120)";
+    });
+
+    var box=document.getElementById("pro");
+    box.addEventListener("mousemove",run);
+    function run(e){
+        box.style.backgroundColor="rgb("+e.clientY +","+e.clientX+ ",120)";
+    }
+    </script>
+</html>
